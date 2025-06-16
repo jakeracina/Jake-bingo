@@ -16,7 +16,7 @@ WORDS = [
 def bingo():
     selected = random.sample(WORDS, 24)
     grid = [selected[i*5:(i+1)*5] for i in range(5)]
-    grid[2].insert(2, "FREE")  # Insert FREE in the center
+    grid[2].insert(2, "FREE")  # center cell
     return render_template("bingo.html", grid=grid)
 
 if __name__ == "__main__":
