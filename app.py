@@ -15,8 +15,8 @@ WORDS = [
 @app.route("/")
 def bingo():
     selected = random.sample(WORDS, 24)
-    grid = [selected[i*5:(i+1)*5] for i in range(5)]
-    grid[2].insert(2, "FREE")  # center cell
+    bingo_list = selected[:12] + ["FREE"] + selected[12:]
+    grid = [bingo_list[i*5:(i+1)*5] for i in range(5)]
     return render_template("bingo.html", grid=grid)
 
 if __name__ == "__main__":
